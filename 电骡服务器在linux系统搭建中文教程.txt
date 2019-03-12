@@ -1,0 +1,35 @@
+下载群文件 eMule服务器搭建所需全部文件及安装方法01.zip  
+
+本文使用centos系统
+
+
+解压  
+32位系统把文件夹eserver x86里的文件上传到服务器root的目录
+64位系统把文件夹eserver x64里的文件上传到服务器root的目录
+打开ssh或者打开服务器命令行
+32位系统输入 chmod 755 /root/lugdunum-eserver-17.15-i686-linux.nptl  回车
+64位系统输入 chmod 755 /root/lugdunum-17.15.x86_64-linux.nptl  回车
+再输入 cd /root  回车
+最后 
+32位系统输入  ln -s lugdunum-eserver-17.15-i686-linux.nptl eserver 回车
+64位系统输入  ln -s lugdunum-17.15.x86_64-linux.nptl eserver 回车
+
+再输入screen  ./script.sh 回车  就运行电骡服务器了
+如果没有安装screen  就yum install screen 安装screen 再运行screen  ./script.sh
+
+
+donkey.ini配置文件默认也可以运行  也可以自己修改  参考群文件  搭建ed2k服务器.doc
+
+里面的参数
+
+thisIP=203.74.203.232  # 服务器的公网ip
+
+port=4456              # 服务器的端口
+
+LOWIDpercent=100       # lowid客户端占总客户端的百分比  最好100
+
+seedIP=91.200.42.46    # 热门的电骡服务器的ip  设置这个  如果emule有设置连接服务器更新服务器则连接这个服务器会更新出你的服务器到emule的服务器列表
+seedPort=1176          # 热门的电骡服务器的端口   
+
+
+其它参数 参考群文件  搭建ed2k服务器.doc
